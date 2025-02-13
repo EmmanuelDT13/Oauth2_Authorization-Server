@@ -59,7 +59,7 @@ public class AuthorizationSecurityConfig {
 			authorize.requestMatchers("/login").permitAll();
 			authorize.anyRequest().authenticated();
 		})
-		.formLogin(Customizer.withDefaults());
+		.formLogin(formLoginConfig -> formLoginConfig.loginPage("/login"));
 		return httpSecurity.build();
 	}
 	

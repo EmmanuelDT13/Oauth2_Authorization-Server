@@ -25,7 +25,7 @@ public class LoginController {
 		
 		httpSecurity.logout(logoutConfig ->{
 			logoutConfig.logoutSuccessUrl("login?logout")
-			.deleteCookies("SESSIONID")
+			.deleteCookies("JSESSIONID")
 			.clearAuthentication(true)
 			.invalidateHttpSession(true);
 		});
